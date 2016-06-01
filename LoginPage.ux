@@ -11,8 +11,8 @@
 		</StackPanel>
 
 		<StackPanel Alignment="VerticalCenter" Margin="50,0,50,0" ItemSpacing="8">
-			<WhiteTextInput PlaceholderText="username" Value="{username}" TextAlignment="Center"/>
-			<WhiteTextInput PlaceholderText="password" Value="{password}" TextAlignment="Center" IsPassword="true" />
+			<WhiteTextInput PlaceholderText="username" Value="{username}" TextAlignment="Center" FontSize="16"/>
+			<WhiteTextInput PlaceholderText="password" Value="{password}" TextAlignment="Center" FontSize="16" IsPassword="true" />
 			<Button Text="Login" Clicked="{login}"/>
 		</StackPanel>
 	</Grid>
