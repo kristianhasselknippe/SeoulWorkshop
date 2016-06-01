@@ -1,0 +1,41 @@
+<Page ux:Class="MainPage">
+	<Router ux:Dependency="router" />
+	<JavaScript File="MainPage.js" />
+
+	<DockPanel>
+		<StackPanel Dock="Top">
+			<WhiteText FontSize="30" Alignment="Center" Margin="50,50,50,0">Welcome!</WhiteText>
+			<WhiteText FontSize="30" Alignment="Center" Margin="50,10" Value="{username}"/>
+			<WhiteText FontSize="20" Alignment="Center" Margin="20">Upcoming concerts:</WhiteText>
+		</StackPanel>
+
+
+
+		<ScrollView>
+			<StackPanel>
+				<Each Items="{concerts}">
+					<Panel>
+						<Rectangle Layer="Background" Color="White" Opacity=".5" Height="1" Alignment="Top" />
+
+						<DockPanel HitTestMode="LocalBoundsAndChildren">
+							<Image ux:Name="goingIcon" File="Assets/going.png" Dock="Left" Width="16" Height="16" Margin="20,0,0,0" />
+
+							<WhileFalse Value="{isGoing}">
+								<Scale Target="goingIcon" Factor="0" Duration=".2" />
+							</WhileFalse>
+
+							<WhiteText Value="{date}" Margin="20" Dock="Right" />
+							<WhiteText Value="{artist}" Margin="20" />
+
+							<WhilePressed>
+								<Scale Factor=".95" Duration=".1" Easing="ExponentialInOut" />
+							</WhilePressed>
+
+							<Clicked Handler="{pushConcertInfoPage}" />
+						</DockPanel>
+					</Panel>
+				</Each>
+			</StackPanel>
+		</ScrollView>
+	</DockPanel>
+</Page>

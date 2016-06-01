@@ -1,0 +1,11 @@
+<Page ux:Class="ConcertPage">
+	<Router ux:Dependency="router" />
+	<JavaScript File="ConcertPage.js" />
+
+	<StackPanel ItemSpacing="10" Alignment="Center">
+		<WhiteText Value="{concert.artist}" FontSize="25"/>
+		<WhiteText Value="{concert.date}" FontSize="12"/>
+		<WhiteText Value="{concert.city}" FontSize="18"/>
+		<WhiteText Value="{concert.description}" FontSize="16"/>
+	</StackPanel>
+</Page>

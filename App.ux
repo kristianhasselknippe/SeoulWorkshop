@@ -1,0 +1,14 @@
+<App>
+	<Router ux:Name="router" />
+	<Text ux:Class="WhiteText" Color="White" />
+	<TextInput ux:Class="WhiteTextInput" TextColor="White" PlaceholderColor="#ffffff80" />
+
+	<Panel Color="#202c60">
+		<Navigator ux:Name="navigator" DefaultTemplate="login">
+			<Image Layer="Background" File="Assets/base.png" />
+			<LoginPage ux:Template="login" router="router"/>
+			<MainPage ux:Template="main" router="router"/>
+			<ConcertPage ux:Template="concertInfo" router="router" />
+		</Navigator>
+	</Panel>
+</App>
