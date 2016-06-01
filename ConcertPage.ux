@@ -2,10 +2,10 @@
 	<Router ux:Dependency="router" />
 	<JavaScript File="ConcertPage.js" />
 
-	<StackPanel ItemSpacing="10" Alignment="Center">
+	<StackPanel ItemSpacing="10" Alignment="Center" Margin="20">
 		<WhiteText Value="{concert.artist}" FontSize="25"/>
 		<WhiteText Value="{concert.date}" FontSize="12"/>
 		<WhiteText Value="{concert.city}" FontSize="18"/>
-		<WhiteText Value="{concert.description}" FontSize="16"/>
+		<WhiteText Value="{concert.description}" FontSize="16" TextWrapping="Wrap"/>
 	</StackPanel>
 </Page>

@@ -1,3 +1,5 @@
+var placeholderDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce accumsan nibh eleifend diam aliquet venenatis. Pellentesque rhoncus ante vitae lectus ultrices iaculis nec in nunc. Nulla a pharetra nunc. Etiam turpis mi, aliquam et tristique vitae, consectetur nec lacus. Phasellus id ultrices risus, vitae porttitor erat. Nullam in felis urna. Nullam sagittis quam vitae luctus vehicula. Nullam malesuada, dolor et commodo elementum, ipsum odio ullamcorper dui, quis posuere metus justo ut ligula.";
+
 function Concert(id, artist, date, city, isGoing, description) {
 	this.id = id;
 	this.artist = artist;
@@ -33,19 +35,19 @@ function fetchConcerts(callback) {
 	setTimeout(function() {
 		callback([
 			new Concert(1, "Bandy Band", "May 1th", "Oakland", false,
-						"Description about Bandy Band"),
+						"Description about Bandy Band. " + placeholderDescription),
 			new Concert(2, "The Best of Bands", "May 5th", "Oakland", true,
-					   "Description about The Best of Bands"),
+					   "Description about The Best of Bands. " + placeholderDescription),
 			new Concert(3, "Battle of the Band", "May 14th", "San Jose", true,
-					   "Description of Battle of the Bands"),
+					   "Description of Battle of the Bands. " + placeholderDescription),
 			new Concert(4, "That One Band", "May 31st", "San Francisco", false,
-					   "Description of That One Band"),
+					   "Description of That One Band. " + placeholderDescription),
 			new Concert(5, "Awesomusic", "June 12th", "San Francisco", false,
-					   "Description about Awesomusic"),
+					   "Description about Awesomusic. " + placeholderDescription),
 			new Concert(6, "Those Musical People", "June 28th", "Santa Cruz", true,
-					   "Description about Those Musical People"),
+					   "Description about Those Musical People. " + placeholderDescription),
 			new Concert(7, "Band of Bandists", "July 18th", "Palo Alto", false,
-					   "Description of Band of Bandists")]);
+					   "Description of Band of Bandists. " + placeholderDescription)]);
 	}, 0);
 }
 
