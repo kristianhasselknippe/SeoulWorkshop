@@ -1,0 +1,39 @@
+<Page ux:Class="LoginPage">
+	<Router ux:Dependency="router" />
+
+	<Video File="Assets/backgroundvideo.mp4" 
+		AutoPlay="true" IsLooping="true" Layer="Background" Opacity="0.3">
+		<Blur Radius="7"/>
+	</Video>
+
+	<JavaScript>
+		function login(){
+			router.push("concertsPage", {});
+		}
+		module.exports = {
+			login : login
+		};
+	</JavaScript>
+	<Grid RowCount="2">
+		<StackPanel Alignment="Center">
+			<WhiteText Value="go2concert" FontSize="40" TextAlignment="Center">
+				<WhilePressed>
+					<Rotate Degrees="360" Duration="1" />
+				</WhilePressed>
+			</WhiteText>
+			<WhiteText Value="plan your next adventure" />
+		</StackPanel>
+
+		<StackPanel ItemSpacing="10" Padding="40">
+			<WhiteTextBox PlaceholderText="username">
+
+			</WhiteTextBox>
+			<WhiteTextBox PlaceholderText="password" IsPassword="true"/>
+			<Button Clicked="{login}" Text="Login">
+				<WhilePressed>
+					<Scale Factor="0.7" Duration="0.4" />
+				</WhilePressed>
+			</Button>
+		</StackPanel>
+	</Grid>
+</Page>

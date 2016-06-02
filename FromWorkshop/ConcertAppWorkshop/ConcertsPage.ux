@@ -1,0 +1,56 @@
+<Page ux:Class="ConcertsPage">
+	<JavaScript>
+		var Observable = require("FuseJS/Observable");
+		var Backend = require("Backend");
+
+		var concertsList = Observable();
+
+		Backend.fetchConcerts(function(results){
+			results.forEach(function(concert){
+				var item = {};
+				item.artist = concert.artist;
+				item.date = concert.date;
+				item.isGoing = Observable(concert.isGoing);
+				item.clicked = function(){
+					item.isGoing.value = !item.isGoing.value;
+				};
+
+				concertsList.add(item);
+			})
+		})
+
+		module.exports = {
+			concertsList: concertsList
+		};
+	</JavaScript>
+	
+	<Grid Rows="1*,3*">
+		<StackPanel Alignment="Center">
+			<WhiteText Value="Welcome" FontSize="35"/>
+			<WhiteText Value="upcoming concerts:" />
+		</StackPanel>
+		<ScrollView>
+			<StackPanel>
+				<Each Items="{concertsList}">
+					<Grid Columns="1*,3*,2*" Padding="15" Clicked="{clicked}">
+						<WhileTrue Value="{isGoing}">
+							<Image ux:Name="image" Column="0" Width="20" File="Assets/going.png" >
+								<AddingAnimation>
+									<Move X="-60" Duration="1" />
+									<Change image.Opacity="0" Duration="1"/>
+								</AddingAnimation>
+								<RemovingAnimation>
+									<Move X="-60" Duration="1" />
+									<Change image.Opacity="0" Duration="1"/>
+								</RemovingAnimation>
+							</Image>
+						</WhileTrue>
+						<WhiteText  Column="1" Value="{artist}" TextAlignment="Left"/>
+						<WhiteText  Column="2" Value="{date}" />
+					</Grid>
+					<Rectangle Height="1" Color="White" />
+				</Each>
+			</StackPanel>
+		</ScrollView>
+	</Grid>
+</Page>

@@ -1,0 +1,21 @@
+<App>
+	<Router ux:Name="router" />
+	<Text Color="White" ux:Class="WhiteText" TextAlignment="Center" />
+	<TextBox ux:Class="WhiteTextBox" TextColor="White" PlaceholderColor="White"/>
+
+
+	<Panel>
+		<Image File="Assets/base.png" Layer="Background"/>
+
+
+		<Navigator DefaultTemplate="loginPage">
+			<LoginPage ux:Template="loginPage" router="router"/>
+
+			<ConcertsPage ux:Template="concertsPage" />
+		</Navigator>
+
+
+	</Panel>
+
+<!--https://github.com/kristianhasselknippe/SeoulWorkshop-->
+</App>
